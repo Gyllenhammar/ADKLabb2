@@ -24,10 +24,41 @@ public class ClosestWords {
       res = deleteLetter;
     return res;
   }
+  
+  private int minimum(int a, int b, int c) {
+      return Math.min(Math.min(a, b), c);
+  }
+  
+  int dynDistance(String w1, String w2){
+    int[][] M = new int[w1.length() + 1][w2.length() + 1];
 
+    for (int i = 0; i <= w1.length(); i++) 
+        M[i][0] = i;
+    for (int j = 1; j <= w2.length(); j++) 
+        M[0][j] = j;
+
+    for (int i = 1; i <= w1.length(); i++) {
+        for (int j = 1; j <= w2.length(); j++) {
+            M[i][j] = minimum(M[i-1][j] + 1,
+                              M[i][j-1] + 1,
+                              M[i-1][j-1] + ((w1.charAt(i-1) == w2.charAt(j-1)) ? 0 : 1));
+        }
+    }
+
+    for (int i = 0; i <= w1.length(); i++) {
+        for (int j = 0; j <= w2.length(); j++) {
+            System.out.print(M[i][j] + " ");
+        }
+        System.out.println();
+    }
+    return M[w1.length()][w2.length()];
+  }
+  
   int Distance(String w1, String w2) {
     return partDist(w1, w2, w1.length(), w2.length());
   }
+
+  public ClosestWords(){}
 
   public ClosestWords(String w, List<String> wordList) {
     for (String s : wordList) {
