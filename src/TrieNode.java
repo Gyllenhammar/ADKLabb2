@@ -2,8 +2,8 @@ package src;
 
 /**
  * Created by antongyllenhammar on 14-09-29.
+ *
  */
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class TrieNode
      * Adds a word to this node. This method is called recursively and
      * adds child nodes for each successive letter in the word, therefore
      * recursive calls will be made with partial words.
-     * @param word the word to add
+     * @param word the word to add to the trie
      */
     protected void addWord(String word)
     {
@@ -77,10 +77,10 @@ public class TrieNode
      * hierarchy that this node.
      * @return
      */
-    protected List getWords()
+    protected List<String> getWords()
     {
         //Create a list to return
-        List list = new ArrayList();
+        List<String> list = new ArrayList<String>();
 
         //If this node represents a word, add it
         if (isWord)
@@ -147,46 +147,3 @@ public class TrieNode
     }
 
 }
-
-
-
-/*
-
-public class TrieNode {
-
-    ArrayList<TrieNode> children = new ArrayList<TrieNode>();
-    String c;
-    TrieNode parent;
-
-    public TrieNode(String c){
-        this.c = c;
-        this.parent = null;
-    }
-
-    public TrieNode(String c, TrieNode parent){
-        this.c = c;
-        this.parent = parent;
-
-    }
-
-    void insert(String c){
-        if (children.contains(c)){
-
-        }
-
-        else
-            children.add(new TrieNode(c,this));
-
-    }
-
-    void remove(){
-        this.parent.children.remove(this);
-        for(TrieNode child : children){
-            child.parent = this.parent;
-
-        }
-
-    }
-
-}
-*/

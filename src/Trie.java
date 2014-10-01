@@ -2,6 +2,7 @@ package src;
 
 /**
  * Created by antongyllenhammar on 14-09-29.
+ *
  */
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ public class Trie
 
     /**
      * Adds a word to the Trie
-     * @param word
+     * @param word Our word as a String
      */
     public void addWord(String word)
     {
@@ -30,7 +31,7 @@ public class Trie
     /**
      * Get the words in the Trie with the given
      * prefix
-     * @param prefix
+     * @param prefix A prefix of the word that we search for
      * @return a List containing String objects containing the words in
      *         the Trie with the given prefix.
      */

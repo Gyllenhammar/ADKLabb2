@@ -1,10 +1,11 @@
+package TEST;
 /* Labb 2 i DD1352 Algoritmer, datastrukturer och komplexitet    */
 /* Se labbanvisning under kurswebben https://www.kth.se/social/course/DD1352 */
 /* Ursprunglig författare: Viggo Kann KTH viggo@nada.kth.se      */
 import java.util.LinkedList;
 import java.util.List;
 
-public class ClosestWords {
+class ClosestWords {
   LinkedList<String> closestWords = null;
 
   int closestDistance = 1000;
