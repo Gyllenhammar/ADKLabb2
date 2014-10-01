@@ -1,4 +1,4 @@
-/* Labb 2 i DD1352 Algoritmer, datastrukturer och komplexitet    */
+package src;/* Labb 2 i DD1352 Algoritmer, datastrukturer och komplexitet    */
 /* Se labbanvisning under kurswebben https://www.kth.se/social/course/DD1352 */
 /* Ursprunglig författare: Viggo Kann KTH viggo@nada.kth.se      */
 import java.io.BufferedReader;
