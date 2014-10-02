@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Main {
+class Main {
 
   public static List<String> readWordList(BufferedReader input) throws IOException {
     LinkedList<String> list = new LinkedList<String>();
@@ -31,11 +31,14 @@ public class Main {
      List<String> wordList = readWordList(stdin);
      String word;
      while ((word = stdin.readLine()) != null) {
-       ClosestWords closestWords = new ClosestWords(word, wordList);
-       System.out.print(word + " (" + closestWords.getMinDistance() + ")");
-       for (String w : closestWords.getClosestWords())
-        System.out.print(" " + w);
-       System.out.println();
+         if (!word.equals("")) {
+
+           ClosestWords closestWords = new ClosestWords(word, wordList);
+           System.out.print(word + " (" + closestWords.getMinDistance() + ")");
+           for (String w : closestWords.getClosestWords())
+            System.out.print(" " + w);
+           System.out.println();
+         }
      }
     //    long tottime = (System.currentTimeMillis() - t1);
     //    System.out.println("CPU time: " + tottime + " ms");

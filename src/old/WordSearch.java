@@ -1,3 +1,5 @@
+package src.old;
+
 import java.util.ArrayList;
 class WordSearch {
 
